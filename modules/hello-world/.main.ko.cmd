@@ -1,1 +1,0 @@
-cmd_/home/madcoder/Programmazione/C/kernel-modules/modules/hello-world/main.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/madcoder/Programmazione/C/kernel-modules/modules/hello-world/main.ko /home/madcoder/Programmazione/C/kernel-modules/modules/hello-world/main.o /home/madcoder/Programmazione/C/kernel-modules/modules/hello-world/main.mod.o
