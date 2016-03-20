@@ -5,21 +5,21 @@
 #include <asm/uaccess.h>
 
 /* defs */
-#define DEV		"chrdev"
+#define DEV	"chrdev"
 #define BUFLEN	80
 
 /* prototypes */
-static int	__init chrdev_init(void);
+static int  __init chrdev_init(void);
 static void __exit chrdev_exit(void);
-static int 		dev_open(struct inode*, struct file*);
-static int 		dev_close(struct inode*, struct file*);
+static int 	dev_open(struct inode*, struct file*);
+static int 	dev_close(struct inode*, struct file*);
 static ssize_t 	dev_read(struct file*, char*, size_t, loff_t*);
 static ssize_t	dev_write(struct file*, const char*, size_t, loff_t*);
 
 /* variables */
-static int 		major;
-static int 		is_open; 				/* 1 if the device is open */
-static char		dev_buffer[BUFLEN];
+static int 	major;
+static int 	is_open; 				/* 1 if the device is open */
+static char	dev_buffer[BUFLEN];
 static char* 	bufferp;				/* buffer pointer */
 static struct file_operations fops = {
 				.open = dev_open,
